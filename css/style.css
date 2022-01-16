@@ -182,7 +182,7 @@ body{
 
 .header__content-box{
     display: flex;
-    margin-left: 100%;
+    justify-content: flex-end;
     margin-right: 16px;
     font-size: 18px;
     line-height: 21px;
@@ -454,3 +454,140 @@ padding: 33px 0 33px 20px;
     fill: #001E64;
 }
 
+.menu__btn{
+    width: 40px;
+    border: none;
+    background-color: transparent;
+    padding: 13px 0;
+    cursor: pointer;
+    position: relative;
+    display: none;
+    z-index: 10;
+}
+
+.menu__btn::after,
+.menu__btn::before{
+    content: "";
+    position: absolute;
+    right: 0;
+    left: 0;
+    height: 4px;
+    background-color: #001E64;
+}
+
+.menu__btn::before{
+    top: 0;
+}
+
+.menu__btn::after{
+    bottom: 0;
+}
+
+.menu__btn span{
+    display: block;
+    height: 4px;
+    background-color: #001E64;
+}
+
+
+@media( max-width: 1000px){
+    .menu__list{
+        position: absolute;
+        left: 20%;
+        right: 20%;
+        background-color: #fff;
+        display: block;
+        top: -350px;
+        transition: all .5s;
+        z-index: 5;
+    }
+
+    .menu__link:hover{
+        border: none;
+    }
+
+    .menu__list.menu__list--activ{
+        top: 75px;
+    }
+
+    .menu__btn{
+        display: block;
+    }
+    .menu{
+        margin-left: auto;
+        margin-top: 12px;
+        margin-right: 20px;
+    }
+    .menu__item + .menu__item{
+        margin-left: 0;
+    }
+    .menu__link{
+        padding: 20px 0;
+        display: block;
+        text-align: center;
+        /* pointer-events: none; */
+        
+    }
+}
+
+
+@media(max-width: 745px){
+    .title{
+
+        font-size: 50px;
+        line-height: 66px;
+        max-width: 100%;
+        padding-left: 0px;
+        text-align: center;
+    }
+}
+
+@media(max-width: 470px){
+    .header-slider{
+        padding-left: 50px;
+
+    }
+    .slick-dots{
+        left: 5px;
+    }
+
+    .slick-prev, .slick-next{
+        left: 9px;
+    }
+
+    .header__content-btn{
+        margin-left: 50px;
+    }
+    .title{
+        font-size: 34px;
+        line-height: 44px;
+    }
+}
+
+@media(max-width: 360px){
+    .title{
+        padding-top: 125px;
+        font-size: 34px;
+        line-height: 44px;
+    }
+    .phone{
+        margin-right: 0;
+    }
+    .logo{
+        margin-left: 0;
+    }
+    .menu__list{
+        right: 10%;
+        left: 10%;
+    }
+    .header-slider{
+        padding-left: 0;
+        padding-top: 0;
+    }
+    .header__content-btn{
+        margin-left: 0;
+    }
+    .logo__img{
+        width: 70%;
+    }
+}

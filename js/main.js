@@ -3,7 +3,19 @@ $(function(){
         dots: true,
         prevArrow: '<button type="button" class="slick-prev"><img src="images/arrow-up.svg"></button>',
         nextArrow: '<button type="button" class="slick-next"><img src="images/arrow-down.png"></button>',
-        vertical: true
+        fade: true,
+        responsive: [
+            {
+            breakpoint: 361,
+            settings: {
+                dots: false,
+                arrows: false,
+                autoplay: true,
+                autoplaySpeed: 2000,
+
+            }
+        }
+    ]
     });
 
     $('.product__name').slick({
@@ -22,6 +34,10 @@ $(function(){
         fade: true,
         asNavFor: '.product__name',
         arrows: false,
+    });
+
+    $('.menu__btn').on('click', function(){
+        $('.menu__list').toggleClass('menu__list--activ');
     });
 
 });
